@@ -1,0 +1,118 @@
+import React, { useEffect, useState } from "react";
+import EditField from "./EditField";
+import "./CustomDataGrid.css";
+
+import DataGrid, {
+  Column,
+  ColumnChooser,
+  ColumnFixing,
+} from "devextreme-react/data-grid";
+
+import service from "../data.js";
+
+//config and data
+import reportConfig from "../report-config.json";
+const gridData = service.getEmployees();
+
+const CustomDataGrid = (props) => {
+  const calculateCellValue = (data) => {
+    return [data.Title, data.FirstName, data.LastName].join(" ");
+  };
+
+  //Colums
+  // const gridData = service.getEmployees();
+  const defaultColumnNames = Object.keys(gridData[0]);
+  const [columns, setColumns] = useState(defaultColumnNames);
+
+  //Test console log
+  console.log(defaultColumnNames);
+
+  // Creating state report config
+  const [curtReportConfig, setCurtReportConfi] = useState(reportConfig);
+
+  //Logging
+  useEffect(() => {
+    console.log("curtReportConfig: ", curtReportConfig);
+    console.log(curtReportConfig.columns);
+  }, [curtReportConfig]);
+
+  //columns={["ID"]}
+  //render column list
+  const renderColumns = curtReportConfig.colums.map((col_parms, index) => {
+    return (
+      <Column
+        key={index}
+        dataField={col_parms.dataField}
+        dataType={col_parms.dataType}
+      />
+    );
+  });
+
+  return (
+    <div className="">
+      <div className="ui divider"></div>
+
+      <div className="ui grid">
+        <div className="twelve wide column">
+          <DataGrid
+            id="gridContainer"
+            dataSource={gridData}
+            keyExpr="ID"
+            allowColumnReordering={true}
+            allowColumnResizing={true}
+            columnAutoWidth={true}
+            showBorders={true}
+          >
+            {renderColumns}
+
+            <ColumnFixing enabled={true} />
+            <ColumnChooser />
+          </DataGrid>
+        </div>
+        <div className="editField four column">
+          <EditField />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CustomDataGrid;
+
+/*
+ 
+      <Column dataField="City" />
+        <Column
+          caption="Employee"
+          width={230}
+          fixed={true}
+          calculateCellValue={this.calculateCellValue}
+        />
+        <Column
+          dataField="BirthDate"
+          dataType="date"
+        />
+        <Column
+          dataField="HireDate"
+          dataType="date"
+        />
+        <Column
+          dataField="Position"
+          alignment="right"
+        />
+        <Column
+          dataField="Address"
+          width={230}
+        />
+        <Column dataField="City" />
+        <Column dataField="State" />
+        <Column
+          dataField="Zipcode"
+          visible={false}
+        />
+        <Column dataField="HomePhone" />
+        <Column dataField="MobilePhone" />
+        <Column dataField="Skype" />
+        <Column dataField="Email" />
+
+ * */

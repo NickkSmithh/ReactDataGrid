@@ -1,0 +1,27 @@
+{
+  "name": "Naimenovanie",
+  "code": "123",
+  "colums": [
+    {
+      "dataField": "ID",
+      "caption": "",
+      "dataType": "",
+      "format": "",
+      "alignment": ""
+    },
+    {
+      "dataField": "BirthDate",
+      "caption": "",
+      "dataType": "date",
+      "format": "",
+      "alignment": ""
+    },
+    {
+      "dataField": "BirthDate",
+      "caption": "test",
+      "dataType": "date",
+      "format": "",
+      "alignment": ""
+    }
+  ]
+}

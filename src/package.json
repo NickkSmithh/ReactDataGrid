@@ -1,0 +1,28 @@
+{
+  "name": "Column Customization - DevExtreme Data Grid",
+  "description": "Users can do the following to customize grid columns at runtime:\nReorder Columns\nDrag the column's header to reorder the column.\n\nComponent property: allowColumnReordering\nColumn property: allowReordering\n\nResize columns\nDrag the edge of the column's header to resize the column.\n\nComponent property: allowColumnResizing\nRelated functionality:  columnAutoWidth - resizes grid columns to automatically fit the content\n\nFix (pin) columns\nInvoke a context menu in a column's header and specify whether to fix the column to the left or right. The fixed column remains visible when users scroll the view horizontally.\n\nComponent property: columnFixing.enabled\nColumn property: columns[].fixed - if enabled, fixes a column to the left; columns[].fixedPosition - specifies whether to fix a column to the left or right\n\nShow and hide columns\nClick the Column Chooser button to access hidden columns. Drag the column's header between the Column Chooser and the grid to change the column's visibility.\n\nComponent property: columnChooser.enabled\nColumn property: columns[].visible\n\n",
+  "dependencies": {
+    "rrule": "2.6.6",
+    "react-dom": "17.0.2",
+    "react": "17.0.2",
+    "prop-types": "15.7.2",
+    "luxon": "1.28.0",
+    "jszip": "3.7.1",
+    "inferno-hydrate": "7.4.10",
+    "inferno-extras": "7.4.10",
+    "inferno-dom": "1.0.7",
+    "inferno-create-element": "7.4.10",
+    "inferno-create-class": "7.4.10",
+    "inferno-compat": "7.4.10",
+    "inferno-clone-vnode": "7.4.10",
+    "inferno": "7.4.10",
+    "es6-object-assign": "1.1.0",
+    "devextreme-react": "21.2.3",
+    "devextreme-quill": "1.5.5",
+    "devextreme": "21.2.3",
+    "devexpress-gantt": "3.1.24",
+    "devexpress-diagram": "2.1.37",
+    "@devextreme/vdom": "2.2.3",
+    "@devextreme/runtime": "2.3.6"
+  }
+}
